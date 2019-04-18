@@ -1,0 +1,9 @@
+set P1 := UA1	UA2	UA3 UA4;
+set P2 := DU1	DU2	DU3 DU4;
+
+param payoff (tr) :
+		DU1	DU2	DU3 DU4	:=
+UA1		3	-2	1	4
+UA2		2	3	-5	0
+UA3		-1	2	-2	2
+UA4		-3	-5	4	1	;

@@ -1,0 +1,9 @@
+set P1 := B1 B2 B3;
+set P2 := A1 A2 A3;
+
+param payoff (tr):
+	A1	A2	A3	:=
+B1	0	-1	1
+B2	1	0	-1
+B3	-1	1	0	;
+

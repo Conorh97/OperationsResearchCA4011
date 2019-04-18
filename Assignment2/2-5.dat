@@ -1,0 +1,28 @@
+set DAYS := MON TUE WED THUR FRI SAT SUN ;
+set SCHEDULE := MonTueWedThurSat MonTueWedThurSun
+				MonTueWedFriSat MonTueWedFriSun
+				MonTueThurFriSat MonTueThurFriSun
+				MonWedThurFriSat MonWedThurFriSun
+				TueWedThurFriSat TueWedThurFriSun ;
+
+param: min_employees :=
+MON			45	  			
+TUE			45	 		
+WED			40	  		
+THUR		50	  		
+FRI			65
+SAT			35
+SUN			35	  	;	
+
+param days_scheduled (tr):
+	   					MON TUE WED THUR FRI SAT SUN :=
+MonTueWedThurSat	   	1   1   1   1    0   1   0	  		
+MonTueWedFriSat	    	1   1   1   0    1   1   0	
+MonTueThurFriSat        1   1   0   1    1   1   0
+MonWedThurFriSat        1   0   1   1    1   1   0
+TueWedThurFriSat        0   1   1   1    1   1   0
+MonTueWedThurSun        1   1   1   1    0   0   1	  		
+MonTueWedFriSun	    	1   1   1   0    1   0   1	
+MonTueThurFriSun        1   1   0   1    1   0   1
+MonWedThurFriSun        1   0   1   1    1   0   1
+TueWedThurFriSun        0   1   1   1    1   0   1 ;

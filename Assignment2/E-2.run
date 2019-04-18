@@ -1,0 +1,38 @@
+model E-2.mod;
+data E-2.dat;
+
+for {i in TOWNS, j in TOWNS} {
+	let distances[i, j] := distances[j, i];
+}
+
+let branches := 0;
+param next_vertex{TOWNS} >= 0, integer;
+param current_vertex >= 0, integer;
+param termination binary;
+let termination := 0;
+
+repeat while (termination = 0) {
+	solve;
+	 
+	let branches := branches + 1;
+	for {i in TOWNS} {
+		let next_vertex[i] :=  sum {j in TOWNS : j != i} j * Visited[i, j];
+	}
+	
+	let current_vertex := 1;
+	let B[branches] := {};
+	repeat {
+		let B[branches] := B[branches] union {current_vertex};
+		let current_vertex := next_vertex[current_vertex];
+	} until (current_vertex = 1);
+	
+	if (card(B[branches]) >= 19) then {
+		let termination := 1;
+	}
+}
+
+display Total_Distance;
+display B;
+
+
+

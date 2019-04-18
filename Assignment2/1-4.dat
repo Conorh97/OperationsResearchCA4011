@@ -1,0 +1,9 @@
+set PROD := T C L;
+
+param: production_time profit minimum_produced efficiency :=
+T			1			200			10				50
+C			2			500			20				30
+L			3			700			15				20	;
+
+param factory_time := 120;
+param fleet_efficiency := 35;

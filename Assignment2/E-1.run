@@ -1,0 +1,11 @@
+model E-1.mod;
+data E-1.dat;
+
+for {i in TOWNS, j in TOWNS} {
+	let distances[i, j] := distances[j, i];
+}
+
+solve;
+
+display Total_Distance;
+display Radii;
